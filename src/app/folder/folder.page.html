@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>{{ folder }}</ion-title>
+    <ion-title>Escanea tu código QR</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -15,7 +15,16 @@
   </ion-header>
 
   <div id="container">
-    <strong class="capitalize">{{ folder }}</strong>
-    <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <ion-card>
+      <ion-card-header>
+          <ngx-qrcode
+          [elementType]="elementType" 
+          [value]="value"
+          [width]="300"
+          cssClass="aclass"
+          errorCorrectionLevel="L">
+          </ngx-qrcode>
+      </ion-card-header>
+    </ion-card>
   </div>
 </ion-content>

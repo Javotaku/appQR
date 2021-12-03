@@ -6,13 +6,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   public appPages = [
-    { title: 'Inbox', url: '/folder/Inbox', icon: 'mail' },
-    { title: 'Outbox', url: '/folder/Outbox', icon: 'paper-plane' },
-    { title: 'Favorites', url: '/folder/Favorites', icon: 'heart' },
-    { title: 'Archived', url: '/folder/Archived', icon: 'archive' },
-    { title: 'Trash', url: '/folder/Trash', icon: 'trash' },
-    { title: 'Spam', url: '/folder/Spam', icon: 'warning' },
+    { title: 'Escanea tu QR', url: '/folder/Inbox', icon: 'qr-code' },
+    { title: 'Mis accesos', url: '/folder2/Inbox', icon: 'list' },
+    { title: 'Cerrar sesion', url: '/login', icon: 'log-out' },
   ];
-  public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
+
+  noCtrl: any;
+
   constructor() {}
+
+  ngOnInit() {
+    this.noCtrl = localStorage.getItem('noCtrl');
+  }
 }
